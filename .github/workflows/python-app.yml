@@ -4,10 +4,15 @@
 name: Python application
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    workflow_dispatch:
+        inputs:
+            environments:
+                description: To deploy for env
+                type: environment
+                required: true
+            # deploy:
+            #     description: deploy
+            #     type: boolean
 
 jobs:
   build:
